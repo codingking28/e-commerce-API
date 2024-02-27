@@ -1,8 +1,13 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
+const users = require("./users");
+const files = require("./file-crud");
 
-app.use(express.json());
+router.get("/welcome", function (req, res, next) {
+  return res.send("Welcome*****");
+});
+router.post("/create", users.create);
+router.post("/getData", files.getRecordData);
+router.get("/getDashboardData", files.getDashboardData);
 
-//Router
-const authRouter = require("./auth");
-app.use("/auth", authRouter);
+module.exports = router;

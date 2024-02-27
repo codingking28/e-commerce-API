@@ -11,7 +11,7 @@ switch (this.SERVER_POINT) {
     break;
   default:
     database = "mongodb://localhost:27017/e_Commerce_App";
-    SERVER_PORT = 3000;
+    SERVER_PORT = 3010;
     break;
 }
 
