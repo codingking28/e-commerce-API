@@ -9,5 +9,7 @@ router.get("/welcome", function (req, res, next) {
 router.post("/create", users.create);
 router.post("/getData", files.getRecordData);
 router.get("/getDashboardData", files.getDashboardData);
+router.post("/createData", files.createRecords);
+router.post("/deleteData", files.deleteRecord);
 
 module.exports = router;
