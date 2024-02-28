@@ -32,11 +32,18 @@ let files = {
     try {
       let resData = jsonData.root.records;
       let recordArr = getConsolidatedRecords(resData);
-      let activeRec = getRecordsByStatus("Record is valid");
+      let activeRec = getRecordsByStatus(recordArr, "Record is valid");
+      let inactiveRec = getRecordsByStatus(
+        recordArr,
+        "Record will soon be invalid"
+      );
+      let refRec = getRecordsByStatus(recordArr, "Extended refresher period");
       res.json({
         recordsCount: recordArr.length,
         usersCount: resData.length,
         activeSession: activeRec.length,
+        soonInActive: inactiveRec.length,
+        refersh: refRec.length,
       });
     } catch (err) {
       console.log(err);

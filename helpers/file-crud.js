@@ -13,14 +13,14 @@ let files = {
     return (Array.isArray(data) ? data : Object.values(data)).filter(find);
   },
   getConsolidatedRecords: (array) => {
-    const recordArr = [];
+    let recordArr = [];
     array.map((data, i) => {
       recordArr.push(...data.records);
     });
     return recordArr;
   },
-  getRecordsByStatus: (status) => {
-    return recordArr.filter((data) => data.status === "Record is valid");
+  getRecordsByStatus: (recordArr, status) => {
+    return recordArr.filter((data) => data.status === status);
   },
 };
 
